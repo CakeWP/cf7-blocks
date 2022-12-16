@@ -1,0 +1,24 @@
+/** Base Styles **/
+@import "node_modules/@wordpress/base-styles/colors";
+@import "node_modules/@wordpress/base-styles/variables";
+@import "node_modules/@wordpress/base-styles/mixins";
+@import "node_modules/@wordpress/base-styles/breakpoints";
+@import "node_modules/@wordpress/base-styles/animations";
+@import "node_modules/@wordpress/base-styles/z-index";
+@import "node_modules/@wordpress/base-styles/default-custom-properties";
+
+.cf7-block-field {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+
+	& > input,
+	& > textarea {
+		width: 100%;
+		padding: 5px;
+	}
+
+	textarea {
+		min-height: 300px;
+	}
+}

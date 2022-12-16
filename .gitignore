@@ -1,0 +1,14 @@
+# Visual code directory
+/.vscode
+
+# Build directory
+/dist
+
+# Node modules
+node_modules
+
+<<<<<<< HEAD
+=======
+# Environment
+>>>>>>> premium
+.env

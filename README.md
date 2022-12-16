@@ -1,0 +1,1 @@
+## Editorskit Dynamic Query Addon

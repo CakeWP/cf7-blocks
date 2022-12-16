@@ -1,0 +1,21 @@
+{
+    "$schema": "https://json.schemastore.org/block.json",
+    "apiVersion": 2,
+    "name": "cf7-blocks/submit",
+    "title": "Submit",
+    "category": "text",
+    "description": "Submit",
+    "keywords": [
+        "submit"
+    ],
+    "version": "1.0.0",
+    "textdomain": "cf7-blocks",
+    "attributes": {
+        "label": {
+            "type": "string",
+            "default": "Submit"
+        }
+    },
+    "supports": {},
+    "styles": []
+}

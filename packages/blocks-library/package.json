@@ -1,0 +1,17 @@
+{
+	"name": "@cakewp/contact-form-7-blocks",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@wordpress/block-editor": "7.0.2",
+		"@wordpress/icons": "^6.1.1",
+		"classnames": "^2.3.1"
+	},
+	"devDependencies": {
+		"@wordpress/prettier-config": "^1.1.1"
+	}
+}
