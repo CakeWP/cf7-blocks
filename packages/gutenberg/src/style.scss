@@ -6,6 +6,7 @@
 @import "node_modules/@wordpress/base-styles/animations";
 @import "node_modules/@wordpress/base-styles/z-index";
 @import "node_modules/@wordpress/base-styles/default-custom-properties";
+@import "./components/branding/style.scss";
 
 .cf7-blockeditor-root {
 	height: 100vh;
@@ -47,3 +48,7 @@ html.is-fullscreen-mode {
 	}
 }
 
+
+.edit-post-header-toolbar__left {
+	padding-left: 0;
+}

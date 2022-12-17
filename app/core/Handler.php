@@ -44,28 +44,19 @@ abstract class Handler {
 		$default_settings = array(
 			'editor'               => $this->editor->get_editor_settings(),
 			'iso'                  => array(
-				'blocks'             => array(),
-				'moreMenu'           => false,
-				'sidebar'            => array(
+				'blocks'      => array(),
+				'moreMenu'    => array(
+					'topToolbar' => true,
+				),
+				'sidebar'     => array(
 					'inserter'  => true,
 					'inspector' => true,
 				),
-				'toolbar'            => array(
+				'toolbar'     => array(
 					'navigation' => true,
 					'inspector'  => true,
 				),
-				'defaultPreferences' => array(
-					'fixedToolbar' => false,
-				),
-				'allowEmbeds'        => array(
-					'youtube',
-					'vimeo',
-					'wordpress',
-					'wordpress-tv',
-					'videopress',
-					'crowdsignal',
-					'imgur',
-				),
+				'allowEmbeds' => array(),
 			),
 			'saveTextarea'         => $textarea,
 			'container'            => $container,
