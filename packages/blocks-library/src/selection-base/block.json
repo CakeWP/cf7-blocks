@@ -19,12 +19,12 @@
             ],
             "default": "checkbox"
         },
-        "selectionItem": {
+        "items": {
             "type": "array",
             "default": [
                 {
                     "label": "",
-                    "isChecked": false
+                    "checked": false
                 }
             ]
         },
