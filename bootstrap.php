@@ -9,6 +9,7 @@
 
 new \CakeWP\CF7Blocks\Assets();
 new \CakeWP\CF7Blocks\Shortcode();
+new \CakeWP\CF7Blocks\Core\Builder();
 
 // Handlers.
 

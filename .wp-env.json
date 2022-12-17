@@ -1,0 +1,9 @@
+{
+    "core": "WordPress/WordPress",
+    "plugins": [
+        "."
+    ],
+    "config": {
+        "WP_DEBUG": true
+    }
+}

@@ -58,7 +58,6 @@ if ( ! class_exists( 'CF7_Blocks' ) ) {
 		public function __construct() {
 			if ( ! static::$loaded ) {
 				static::$loaded = true;
-
 				require_once CF7BLOCKS_DIR_PATH . 'bootstrap.php';
 			}
 		}

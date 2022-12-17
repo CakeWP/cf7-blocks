@@ -8,7 +8,7 @@
 @import "node_modules/@wordpress/base-styles/default-custom-properties";
 
 .cf7-blockeditor-root {
-	height: 600px;
+	height: 100vh;
 
 	& > div,
 	.iso-editor {
@@ -26,6 +26,10 @@
 			height: 100%;
 		}
 	}
+}
+
+#wpcontent {
+	padding-left: 0 !important;
 }
 
 html.is-fullscreen-mode {

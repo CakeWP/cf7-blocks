@@ -4,6 +4,7 @@
 import { __ } from '@wordpress/i18n';
 import { render } from '@wordpress/element';
 import { Button } from '@wordpress/components';
+import { FullscreenMode } from '@wordpress/interface';
 import { __unstableEditorStyles as EditorStyles } from '@wordpress/block-editor';
 
 /**
@@ -43,7 +44,7 @@ export function createGutenbergEditor( textAreaSelector ) {
 
 	editorRoot.className = 'cf7-blockeditor-root';
 
-	const container = document.querySelector( '#wpcf7-admin-form-element' );
+	const container = textArea.parentNode;
 
 	container.appendChild( editorRoot );
 
@@ -57,6 +58,7 @@ export function createGutenbergEditor( textAreaSelector ) {
 			onError={ () => document.location.reload() }
 		>
 			<EditorStyles styles={ cf7BlockEditorSettings.editor.styles } />
+			<FullscreenMode isActive />
 			<EditorLoaded onLoaded={ () => console.log( 'loaded' ) } />
 			<ToolbarSlot>
 				<Button variant="primary">

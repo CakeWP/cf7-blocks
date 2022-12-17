@@ -45,9 +45,7 @@ abstract class Handler {
 			'editor'               => $this->editor->get_editor_settings(),
 			'iso'                  => array(
 				'blocks'             => array(),
-				'moreMenu'           => array(
-					'fullscreen' => true,
-				),
+				'moreMenu'           => false,
 				'sidebar'            => array(
 					'inserter'  => true,
 					'inspector' => true,
