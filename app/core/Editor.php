@@ -195,8 +195,9 @@ class Editor {
 			'disablePostFormats'                   => ! current_theme_supports( 'post-formats' ),
 			/** This filter is documented in wp-admin/edit-form-advanced.php */
 			// phpcs:ignore
-			'titlePlaceholder'                     => apply_filters( 'enter_title_here', __( 'Add title' ), $post ),
+			'titlePlaceholder'                     => __( 'Add title', 'cf7-blocks' ),
 			'bodyPlaceholder'                      => __( 'Create your form', 'cf7-blocks' ),
+			'placeholder'                          => __( 'Zafar', 'cf7-blocks' ),
 			'autosaveInterval'                     => AUTOSAVE_INTERVAL,
 			'styles'                               => get_block_editor_theme_styles(),
 			'richEditingEnabled'                   => user_can_richedit(),

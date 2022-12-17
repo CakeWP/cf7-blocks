@@ -50,6 +50,9 @@ const config = {
 			'./packages/blocks-library/src/editor.scss',
 		'blocks-library-frontend-style':
 			'./packages/blocks-library/src/style.scss',
+
+		'cf7-blocks-integrate': './packages/cf7-integrate/src/index.js',
+		'cf7-blocks-integrate-style': './packages/cf7-integrate/src/style.scss',
 	},
 	output: {
 		clean: false,

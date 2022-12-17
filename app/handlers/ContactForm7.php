@@ -21,18 +21,43 @@ class ContactForm7 extends Handler {
 
 		add_filter( 'wpcf7_autop_or_not', '__return_false' );
 
+		add_action(
+			'init',
+			function() {
+				\CakeWP\CF7Blocks\Assets::enqueue(
+					'cf7-blocks-integrate',
+					'cf7-blocks-integrate.asset.php',
+					'cf7-blocks-integrate.js',
+					'cf7-blocks-integrate.css',
+				);
+			}
+		);
+
 		add_filter(
 			'wpcf7_editor_panels',
 			function( $panels ) {
 				$panels['form-panel'] = array(
 					'title'    => __( 'Form', 'cf7-blocks' ),
 					'callback' => function( $contact_form ) {
+
+						$editor_page = \add_query_arg(
+							array(
+								'id'    => $contact_form->id(),
+								'nonce' => wp_create_nonce( 'cf7blocks-edit-' . $contact_form->id() ),
+							),
+							admin_url( '/admin.php?page=cf7blocks-editor' )
+						);
+
 						?>
 							<div class="cf7-block-editor">
-								<iframe style="width: 100%; height: 600px;" src="http://localhost:8888/wp-admin/admin.php?page=cf7-gutenberg"></iframe>
-								<!-- <textarea id="wpcf7-form" name="wpcf7-form" data-config-field="form.body">
+								<iframe 
+									style="width: 100%; height: 600px;" 
+									src="<?php echo esc_url( $editor_page ); ?>"
+								>
+								</iframe>
+								<textarea id="wpcf7-form" style="display:none;" name="wpcf7-form" data-config-field="form.body">
 									<?php echo esc_textarea( $contact_form->prop( 'form' ) ); ?>
-								</textarea> -->
+								</textarea>
 							</div>
 						<?php
 					},
@@ -51,6 +76,7 @@ class ContactForm7 extends Handler {
 	 * @return void
 	 */
 	public function load_gutenberg_editor( $selector ) {
+
 		$this->load_editor( $selector );
 	}
 

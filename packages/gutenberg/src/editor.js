@@ -3,7 +3,6 @@
  */
 import { __ } from '@wordpress/i18n';
 import { render } from '@wordpress/element';
-import { Button } from '@wordpress/components';
 import { FullscreenMode } from '@wordpress/interface';
 import { __unstableEditorStyles as EditorStyles } from '@wordpress/block-editor';
 
@@ -11,9 +10,9 @@ import { __unstableEditorStyles as EditorStyles } from '@wordpress/block-editor'
  * Custom Dependencies
  */
 import IsolatedBlockEditor, {
-	EditorLoaded,
 	ToolbarSlot,
 } from '@automattic/isolated-block-editor';
+import { ToggleFullScreen } from './components';
 
 /**
  * Updates the content into the given text area node.
@@ -23,6 +22,14 @@ import IsolatedBlockEditor, {
  */
 export function handleSave( content, textArea ) {
 	textArea.value = content;
+
+	parent.window.dispatchEvent(
+		new CustomEvent( 'cf7blocks-content-updated', {
+			detail: {
+				content,
+			},
+		} )
+	);
 }
 
 /**
@@ -59,11 +66,8 @@ export function createGutenbergEditor( textAreaSelector ) {
 		>
 			<EditorStyles styles={ cf7BlockEditorSettings.editor.styles } />
 			<FullscreenMode isActive />
-			<EditorLoaded onLoaded={ () => console.log( 'loaded' ) } />
 			<ToolbarSlot>
-				<Button variant="primary">
-					{ __( 'Save', 'cf7-blocks' ) }
-				</Button>
+				<ToggleFullScreen />
 			</ToolbarSlot>
 		</IsolatedBlockEditor>,
 		editorRoot
