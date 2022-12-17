@@ -3,9 +3,7 @@
  */
 import { clone } from 'lodash';
 import { __ } from '@wordpress/i18n';
-import { trash } from '@wordpress/icons';
-import { useEffect } from '@wordpress/element';
-import { RichText } from '@wordpress/block-editor';
+import { trash, plusCircle } from '@wordpress/icons';
 import { Button, TextControl } from '@wordpress/components';
 
 /**
@@ -23,33 +21,61 @@ function EditMode( props ) {
 
 		props.onUpdate( newItems );
 	};
-
-	return props.items.map( ( item, index ) => {
-		const label = (
-			<TextControl
-				value={ item.label }
-				placeholder={ __( 'Add Label', 'cf7-blocks' ) }
-				onChange={ ( newLabel ) =>
-					handleChange( { ...item, label: newLabel }, index )
-				}
-			/>
+	const handleAdd = () => {
+		const newItem = {
+			label: '',
+			checked: false,
+		};
+		props.onUpdate( [ ...props.items, newItem ] );
+	};
+	const handleDelete = ( index ) => {
+		const newItems = props.items.filter(
+			( _, itemIndex ) => index !== itemIndex
 		);
 
-		return (
-			<div className={ `cf7blocks-${ type }` } key={ index }>
-				{ isLabelFirst && label }
-				<input
-					id={ id }
-					type={ type }
-					name={ name }
-					checked={ item.checked }
-					isRequired={ isRequired }
-				/>
-				{ ! isLabelFirst && label }
-				<Button icon={ trash } />
-			</div>
-		);
-	} );
+		props.onUpdate( newItems );
+	};
+
+	return (
+		<div>
+			{ props.items.map( ( item, index ) => {
+				const label = (
+					<TextControl
+						value={ item.label }
+						placeholder={ __( 'Add Label', 'cf7-blocks' ) }
+						onChange={ ( newLabel ) =>
+							handleChange( { ...item, label: newLabel }, index )
+						}
+					/>
+				);
+
+				return (
+					<div
+						className={ `cf7blocks-selection-field` }
+						key={ index }
+					>
+						{ isLabelFirst && label }
+						<input
+							id={ id }
+							type={ type }
+							name={ name + '[]' }
+							checked={ item.checked }
+							isRequired={ isRequired }
+							value={ item.label }
+						/>
+						{ ! isLabelFirst && label }
+						<Button
+							icon={ trash }
+							onClick={ () => handleDelete( index ) }
+						/>
+					</div>
+				);
+			} ) }
+			<Button icon={ plusCircle } onClick={ handleAdd }>
+				{ __( 'Add Option', 'cf7-blocks' ) }
+			</Button>
+		</div>
+	);
 }
 
 EditMode.propTypes = {

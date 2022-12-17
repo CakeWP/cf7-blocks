@@ -7,11 +7,11 @@ import { useBlockProps } from '@wordpress/block-editor';
 /**
  * Custom Dependencies
  */
-import { convertFieldBlockToCF7Shortcode } from '../utils/convert-to-cf7-shortcode';
+import { convertSelectionBlockToCF7Shortcode } from '../utils/convert-to-cf7-shortcode';
 import { WithLabel } from '../components';
 
 export default function save( props ) {
-	const shortcode = convertFieldBlockToCF7Shortcode( props.attributes );
+	const shortcode = convertSelectionBlockToCF7Shortcode( props.attributes );
 
 	return (
 		<div { ...useBlockProps.save() }>

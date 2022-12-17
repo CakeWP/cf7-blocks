@@ -48,7 +48,7 @@ export default function edit( props ) {
 	return (
 		<>
 			<div { ...blockProps }>
-				{ props.isSelected ? (
+				{ ! props.isSelected ? (
 					<PreviewMode
 						id={ id }
 						type={ type }
@@ -70,31 +70,6 @@ export default function edit( props ) {
 						}
 					/>
 				) }
-
-				{ /* { ! props.isSelected &&
-					items.map( ( item, index ) => {
-						const itemProps = { item, index };
-						return <PreviewMode { ...props } { ...itemProps } />;
-					} ) } */ }
-
-				{ /* { props.isSelected && (
-					<div>
-						{ props.attributes.selectionItem.map(
-							( item, index ) => {
-								const itemProps = { item, index };
-								return (
-									<EditMode { ...props } { ...itemProps } />
-								);
-							}
-						) }
-						<Button
-							icon={ plusCircle }
-							onClick={ addSelectionOption }
-						>
-							{ __( 'Add Option', 'cf7-blocks' ) }
-						</Button>
-					</div>
-				) } */ }
 			</div>
 			<Toolbar { ...props } />
 			<Inspector { ...props } />

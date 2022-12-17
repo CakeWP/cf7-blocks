@@ -16,14 +16,15 @@ function PreviewMode( props ) {
 		const label = <label>{ item.label }</label>;
 
 		return (
-			<div className={ `cf7blocks-${ type }` } key={ index }>
+			<div className="cf7blocks-selection-field-preview" key={ index }>
 				{ isLabelFirst && label }
 				<input
 					id={ id }
 					type={ type }
-					name={ name }
+					name={ name + '[]' }
 					checked={ item.checked }
 					isRequired={ isRequired }
+					value={ item.label }
 				/>
 				{ ! isLabelFirst && label }
 			</div>
