@@ -12,7 +12,8 @@ import { __unstableEditorStyles as EditorStyles } from '@wordpress/block-editor'
 import IsolatedBlockEditor, {
 	ToolbarSlot,
 } from '@automattic/isolated-block-editor';
-import { ToggleFullScreen } from './components';
+import { HeaderToolbarPortal } from './portals';
+import { ToggleFullScreen, Branding, MoreMenu } from './components';
 
 /**
  * Updates the content into the given text area node.
@@ -63,11 +64,16 @@ export function createGutenbergEditor( textAreaSelector ) {
 				return textArea ? parser( textArea.value ) : [];
 			} }
 			onError={ () => document.location.reload() }
+			renderMoreMenu={ () => <MoreMenu /> }
 		>
 			<EditorStyles styles={ cf7BlockEditorSettings.editor.styles } />
 			<FullscreenMode isActive />
+
 			<ToolbarSlot>
 				<ToggleFullScreen />
+				<HeaderToolbarPortal>
+					<Branding />
+				</HeaderToolbarPortal>
 			</ToolbarSlot>
 		</IsolatedBlockEditor>,
 		editorRoot
