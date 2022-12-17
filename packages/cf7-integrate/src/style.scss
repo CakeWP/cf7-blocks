@@ -1,0 +1,36 @@
+.cf7-block-editor {
+
+	&.is-fullscreen {
+		position: fixed;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100vh !important;
+
+		iframe {
+			height: 100vh !important;
+		}
+	}
+}
+
+body.js.is-fullscreen-mode {
+
+	// Reset the html.wp-topbar padding.
+	// Because this uses negative margins, we have to compensate for the height.
+	margin-top: calc(var(--wp-admin--admin-bar--height, 32px) * -1);
+	height: calc(100% + (calc(var(--wp-admin--admin-bar--height, 32px) * -1)));
+
+	#adminmenumain,
+	#wpadminbar {
+		display: none;
+	}
+
+	#wpcontent,
+	#wpfooter {
+		margin-left: 0;
+	}
+
+	#wpfooter {
+		display: none;
+	}
+}
