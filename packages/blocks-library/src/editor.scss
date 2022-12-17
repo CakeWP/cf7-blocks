@@ -7,6 +7,9 @@
 @import "node_modules/@wordpress/base-styles/z-index";
 @import "node_modules/@wordpress/base-styles/default-custom-properties";
 
+/** Custom Styles **/
+@import "./selection-base/editor.scss";
+
 .cf7-block-field {
 	width: 100%;
 	display: flex;

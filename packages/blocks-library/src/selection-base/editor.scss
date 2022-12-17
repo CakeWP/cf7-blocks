@@ -1,0 +1,18 @@
+.wp-block-cf7-blocks-selection-base {
+     &:not(.cf7-block-selection-field-editing){
+	.cf7blocks-checkbox{
+		display: inline-block;
+		margin: 0 0 0 1em;
+     }
+     }
+	&.cf7-block-selection-field-editing{
+	     .cf7blocks-checkbox{
+               display: flex;
+			align-items: center;
+			width: 100%;
+		     label{
+				width: 100%;
+		     }
+          }
+	}
+}
