@@ -7,8 +7,5 @@
 # Node modules
 node_modules
 
-<<<<<<< HEAD
-=======
 # Environment
->>>>>>> premium
 .env

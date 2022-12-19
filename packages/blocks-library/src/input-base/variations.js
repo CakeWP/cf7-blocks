@@ -2,27 +2,25 @@
  * WordPress Dependencies
  */
 import { __ } from '@wordpress/i18n';
-import {
-	globe,
-	upload,
-	edit,
-	mobile,
-	calendar,
-	lineSolid,
-	comment,
-	queryPaginationNumbers,
-} from '@wordpress/icons';
+import { globe, upload, mobile, comment } from '@wordpress/icons';
 import { registerBlockVariation } from '@wordpress/blocks';
 
 /**
  * Custom Dependencies
  */
-import { mail } from '../icons';
+import {
+	mail,
+	textInput,
+	numberInput,
+	calender,
+	range,
+	telephone,
+} from '../icons';
 
 const variations = [
 	{
 		name: 'text',
-		icon: edit,
+		icon: textInput,
 		title: __( 'Text', 'cf7-blocks' ),
 		description: __( 'Create basic input text field.' ),
 		isDefault: true,
@@ -57,7 +55,7 @@ const variations = [
 	},
 	{
 		name: 'date',
-		icon: calendar,
+		icon: calender,
 		title: __( 'Date', 'cf7-blocks' ),
 		description: __( 'Create basic input date field.' ),
 		scope: [ 'inserter', 'transform' ],
@@ -74,7 +72,7 @@ const variations = [
 	},
 	{
 		name: 'number',
-		icon: queryPaginationNumbers,
+		icon: numberInput,
 		title: __( 'Number', 'cf7-blocks' ),
 		description: __( 'Create basic input number field.' ),
 		scope: [ 'inserter', 'transform' ],
@@ -91,7 +89,7 @@ const variations = [
 	},
 	{
 		name: 'tel',
-		icon: mobile,
+		icon: telephone,
 		title: __( 'Telephone', 'cf7-blocks' ),
 		description: __( 'Create basic input telephone field.' ),
 		scope: [ 'inserter', 'transform' ],
@@ -139,7 +137,7 @@ const variations = [
 	},
 	{
 		name: 'range',
-		icon: lineSolid,
+		icon: range,
 		title: __( 'Range', 'cf7-blocks' ),
 		description: __( 'Create basic input range field.' ),
 		scope: [ 'inserter', 'transform' ],

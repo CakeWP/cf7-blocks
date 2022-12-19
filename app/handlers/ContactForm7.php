@@ -38,7 +38,9 @@ class ContactForm7 extends Handler {
 			function( $panels ) {
 				$panels['form-panel'] = array(
 					'title'    => __( 'Form', 'cf7-blocks' ),
-					'callback' => function( $contact_form ) {
+					'callback' => function( $contact_form ) use ( $panels ) {
+
+						$default_callback = $panels['form-panel']['callback'];
 
 						$editor_page = \add_query_arg(
 							array(
@@ -47,6 +49,8 @@ class ContactForm7 extends Handler {
 							),
 							admin_url( '/admin.php?page=cf7blocks-editor' )
 						);
+
+						$default_callback( $contact_form );
 
 						?>
 							<div class="cf7-block-editor">

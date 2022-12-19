@@ -20,3 +20,19 @@ window.addEventListener( 'cf7blocks-fullscreen-mode', ( e ) => {
 		cf7BlockEditor.classList.remove( 'is-fullscreen' );
 	}
 } );
+
+window.addEventListener( 'load', () => {
+	wpcf7.taggen.insert = ( content ) => {
+		const cf7BlockEditor = document.querySelector(
+			'.cf7-block-editor iframe'
+		);
+
+		cf7BlockEditor.contentWindow.dispatchEvent(
+			new CustomEvent( 'cf7blocks-insert-block', {
+				detail: {
+					shortcode: `<!-- wp:shortcode -->${ content }<!-- /wp:shortcode -->`,
+				},
+			} )
+		);
+	};
+} );

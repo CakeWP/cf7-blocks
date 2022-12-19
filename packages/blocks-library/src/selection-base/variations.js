@@ -2,17 +2,17 @@
  * WordPress Dependencies
  */
 import { __ } from '@wordpress/i18n';
-import { check, lifesaver } from '@wordpress/icons';
 import { registerBlockVariation } from '@wordpress/blocks';
 
 /**
  * Custom Dependencies
  */
+import { checkbox, radio } from '../icons';
 
 const variations = [
 	{
 		name: 'checkbox',
-		icon: check,
+		icon: checkbox,
 		title: __( 'Checkbox', 'cf7-blocks' ),
 		description: __( 'Create basic checkbox field.' ),
 		isDefault: true,
@@ -26,7 +26,7 @@ const variations = [
 	},
 	{
 		name: 'radio',
-		icon: lifesaver,
+		icon: radio,
 		title: __( 'Radio', 'cf7-blocks' ),
 		description: __( 'Create basic radio field.' ),
 		isDefault: false,
