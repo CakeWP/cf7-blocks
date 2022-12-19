@@ -28,6 +28,18 @@
                 }
             ]
         },
+        "requiredText": {
+            "type": "string",
+            "default": "*"
+        },
+        "mainLabel": {
+            "type": "string",
+            "default": ""
+        },
+        "showLabel": {
+            "type": "boolean",
+            "default": false
+        },
         "isRequired": {
             "type": "boolean",
             "default": false

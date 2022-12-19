@@ -1,5 +1,13 @@
 .wp-block-cf7-blocks-selection-base {
 
+	.cf7blocks-selection-base-main-label-wrapper {
+		display: flex;
+
+		.cf7blocks-selection-base-main-label {
+			display: block;
+		}
+	}
+
 	&:not(.cf7-block-selection-field-editing) {
 
 		.cf7blocks-selection-field-preview {

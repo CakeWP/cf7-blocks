@@ -31,6 +31,10 @@
             "type": "boolean",
             "default": false
         },
+        "requiredText": {
+            "type": "string",
+            "default": "*"
+        },
         "showLabel": {
             "type": "boolean",
             "default": false

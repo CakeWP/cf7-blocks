@@ -7,11 +7,11 @@ import { useBlockProps } from '@wordpress/block-editor';
 /**
  * Custom Dependencies
  */
-import { convertFieldBlockToCF7Shortcode } from '../utils/convert-to-cf7-shortcode';
+import { convertAcceptanceBlockToCF7Shortcode } from '../utils/convert-to-cf7-shortcode';
 import { WithLabel } from '../components';
 
 export default function save( props ) {
-	const shortcode = convertFieldBlockToCF7Shortcode( props.attributes );
+	const shortcode = convertAcceptanceBlockToCF7Shortcode( props.attributes );
 
 	return (
 		<div { ...useBlockProps.save() }>
@@ -19,9 +19,6 @@ export default function save( props ) {
 				label={ props.attributes.label }
 				showLabel={ props.attributes.showLabel }
 			>
-				{ props.attributes.showLabel && props.attributes.isRequired
-					? props.attributes.requiredText
-					: '' }
 				<RawHTML>{ shortcode }</RawHTML>
 			</WithLabel>
 		</div>

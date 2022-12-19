@@ -1,7 +1,8 @@
 /**
  * Blocks
  */
-import './selection-base';
-import './input-base';
 import './submit';
 import './form-template';
+import './input-base';
+import './acceptance';
+import './selection-base';

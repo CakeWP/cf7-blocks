@@ -13,7 +13,11 @@
     "attributes": {
         "label": {
             "type": "string",
-            "default": "Submit"
+            "default": ""
+        },
+        "id": {
+            "type": "string",
+            "default": ""
         }
     },
     "supports": {},

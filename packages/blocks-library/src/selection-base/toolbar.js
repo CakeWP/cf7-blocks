@@ -11,20 +11,22 @@ import { ToolbarGroup, ToolbarButton } from '@wordpress/components';
 import { required } from '../icons';
 
 function Toolbar( props ) {
-	const { isRequired } = props.attributes;
+	const { isRequired, type } = props.attributes;
 
 	return (
 		<BlockControls>
-			<ToolbarGroup>
-				<ToolbarButton
-					icon={ required }
-					isPressed={ isRequired }
-					label={ __( 'Required', 'cf7-blocks' ) }
-					onClick={ () =>
-						props.setAttributes( { isRequired: ! isRequired } )
-					}
-				/>
-			</ToolbarGroup>
+			{ type !== 'radio' && (
+				<ToolbarGroup>
+					<ToolbarButton
+						icon={ required }
+						isPressed={ isRequired }
+						label={ __( 'Required', 'cf7-blocks' ) }
+						onClick={ () =>
+							props.setAttributes( { isRequired: ! isRequired } )
+						}
+					/>
+				</ToolbarGroup>
+			) }
 		</BlockControls>
 	);
 }

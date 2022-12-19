@@ -16,9 +16,12 @@ export default function save( props ) {
 	return (
 		<div { ...useBlockProps.save() }>
 			<WithLabel
-				label={ props.attributes.label }
+				label={ props.attributes.mainLabel }
 				showLabel={ props.attributes.showLabel }
 			>
+				{ props.attributes.showLabel && props.attributes.isRequired
+					? props.attributes.requiredText
+					: '' }
 				<RawHTML>{ shortcode }</RawHTML>
 			</WithLabel>
 		</div>
