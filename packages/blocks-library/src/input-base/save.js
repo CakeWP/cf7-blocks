@@ -19,6 +19,9 @@ export default function save( props ) {
 				label={ props.attributes.label }
 				showLabel={ props.attributes.showLabel }
 			>
+				{ props.attributes.showLabel && props.attributes.isRequired
+					? props.attributes.requiredText
+					: '' }
 				<RawHTML>{ shortcode }</RawHTML>
 			</WithLabel>
 		</div>
