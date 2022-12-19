@@ -37,7 +37,6 @@ if ( is_readable( CF7BLOCKS_DIR_PATH . 'lib/autoload.php' ) ) {
 	include_once CF7BLOCKS_DIR_PATH . 'lib/autoload.php';
 }
 
-
 if ( ! class_exists( 'CF7_Blocks' ) ) {
 	/**
 	 * Main plugin class
@@ -58,7 +57,15 @@ if ( ! class_exists( 'CF7_Blocks' ) ) {
 		public function __construct() {
 			if ( ! static::$loaded ) {
 				static::$loaded = true;
-				require_once CF7BLOCKS_DIR_PATH . 'bootstrap.php';
+				
+				// Core.
+				new \CakeWP\CF7Blocks\Assets();
+				new \CakeWP\CF7Blocks\Shortcode();
+				new \CakeWP\CF7Blocks\Core\Builder();
+
+				// Handlers.
+				new \CakeWP\CF7Blocks\Handlers\ContactForm7();
+
 			}
 		}
 

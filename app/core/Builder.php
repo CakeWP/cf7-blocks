@@ -7,8 +7,6 @@
 
 namespace CakeWP\CF7Blocks\Core;
 
-use WP_Error;
-
 /**
  * Main class that handles contact form 7 gutenberg builder.
  */

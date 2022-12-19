@@ -61,12 +61,6 @@ const config = {
 	plugins: [
 		...defaultConfig.plugins,
 
-		new FixStyleOnlyEntriesPlugin(),
-
-		new CssoWebpackPlugin( {
-			forceMediaMerge: true,
-		} ),
-
 		new MiniCssExtractPlugin( {
 			filename: ( pathData ) => {
 				const filename = pathData.chunk.name.replace(
@@ -77,6 +71,8 @@ const config = {
 				return `${ filename }.css`;
 			},
 		} ),
+
+		// new FixStyleOnlyEntriesPlugin(),
 
 		// TODO: can we implement a better logic, other than surpressing the build chunks?
 		new IgnoreEmitPlugin( /(-style)/i ),

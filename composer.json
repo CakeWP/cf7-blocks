@@ -14,7 +14,9 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"CakeWP\\CF7Blocks\\": "app/"
+			"CakeWP\\CF7Blocks\\": "app/",
+			"CakeWP\\CF7Blocks\\Core\\": "app/core/",
+			"CakeWP\\CF7Blocks\\Handlers\\": "app/handlers/"
 		}
 	},
 	"prefer-stable": true,
