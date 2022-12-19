@@ -1,17 +1,22 @@
 .wp-block-cf7-blocks-selection-base {
-     &:not(.cf7-block-selection-field-editing){
-	.cf7blocks-selection-field-preview{
-		display: inline-block;
-		margin: 0 0 0 1em;
-     }
-     }
-	&.cf7-block-selection-field-editing{
-	     .cf7blocks-selection-field{
-               display: flex;
+
+	&:not(.cf7-block-selection-field-editing) {
+
+		.cf7blocks-selection-field-preview {
+			display: inline-block;
+			margin: 0 0 0 1em;
+		}
+	}
+
+	&.cf7-block-selection-field-editing {
+
+		.cf7blocks-selection-field {
+			display: flex;
 			align-items: center;
 			width: 100%;
-               grid-gap: 6px;
-		     .components-base-control{
+			grid-gap: 6px;
+
+			.components-base-control {
 				width: 100%;
 			}
 		}
