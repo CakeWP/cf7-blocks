@@ -11,11 +11,20 @@
     "version": "1.0.0",
     "textdomain": "cf7-blocks",
     "attributes": {
+        "isMultipleSelect": {
+            "type": "boolean",
+            "default": false
+        },
+        "isFirstBlankItem": {
+            "type": "boolean",
+            "default": false
+        },
         "type": {
             "type": "string",
             "enum": [
                 "checkbox",
-                "radio"
+                "radio",
+                "select"
             ],
             "default": "checkbox"
         },

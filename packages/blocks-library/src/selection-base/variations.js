@@ -2,7 +2,7 @@
  * WordPress Dependencies
  */
 import { __ } from '@wordpress/i18n';
-import { check, lifesaver } from '@wordpress/icons';
+import { check, lifesaver, archive } from '@wordpress/icons';
 import { registerBlockVariation } from '@wordpress/blocks';
 
 /**
@@ -33,6 +33,20 @@ const variations = [
 		scope: [ 'inserter', 'transform' ],
 		attributes: {
 			type: 'radio',
+		},
+		isActive: ( blockAttributes, variationAttributes ) => {
+			return blockAttributes.type === variationAttributes.type;
+		},
+	},
+	{
+		name: 'select',
+		icon: archive,
+		title: __( 'Select', 'cf7-blocks' ),
+		description: __( 'Create basic select field.' ),
+		isDefault: false,
+		scope: [ 'inserter', 'transform' ],
+		attributes: {
+			type: 'select',
 		},
 		isActive: ( blockAttributes, variationAttributes ) => {
 			return blockAttributes.type === variationAttributes.type;
