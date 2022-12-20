@@ -7,6 +7,7 @@
 @import "node_modules/@wordpress/base-styles/z-index";
 @import "node_modules/@wordpress/base-styles/default-custom-properties";
 @import "./components/branding/style.scss";
+@import "./components/welcome-guide/style.scss";
 
 .cf7-blockeditor-root {
 	height: 100vh;

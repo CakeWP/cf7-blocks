@@ -1,6 +1,6 @@
 import { SVG, Path } from '@wordpress/primitives';
 
-const mail = (
+const bell = (
 	<SVG
 		xmlns="http://www.w3.org/2000/svg"
 		width="1em"
@@ -10,9 +10,9 @@ const mail = (
 	>
 		<Path
 			fill="currentColor"
-			d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5l-8-5h16zm0 12H4V8l8 5l8-5v10z"
+			d="M10 21h4c0 1.1-.9 2-2 2s-2-.9-2-2m11-2v1H3v-1l2-2v-6c0-3.1 2-5.8 5-6.7V4c0-1.1.9-2 2-2s2 .9 2 2v.3c3 .9 5 3.6 5 6.7v6l2 2m-4-8c0-2.8-2.2-5-5-5s-5 2.2-5 5v7h10v-7Z"
 		/>
 	</SVG>
 );
 
-export default mail;
+export default bell;

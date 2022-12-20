@@ -1,4 +1,4 @@
-export const cf7Blocks = (
+const cf7Blocks = (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		width="553"
@@ -28,3 +28,5 @@ export const cf7Blocks = (
 		/>
 	</svg>
 );
+
+export default cf7Blocks;

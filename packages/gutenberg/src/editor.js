@@ -13,7 +13,13 @@ import IsolatedBlockEditor, {
 	ToolbarSlot,
 } from '@automattic/isolated-block-editor';
 import { HeaderToolbarPortal } from './portals';
-import { ToggleFullScreen, Branding, MoreMenu } from './components';
+import {
+	ToggleFullScreen,
+	Branding,
+	MoreMenu,
+	WelcomeGuide,
+	InteractiveEvents,
+} from './components';
 
 /**
  * Updates the content into the given text area node.
@@ -68,7 +74,8 @@ export function createGutenbergEditor( textAreaSelector ) {
 		>
 			<EditorStyles styles={ cf7BlockEditorSettings.editor.styles } />
 			<FullscreenMode isActive />
-
+			<WelcomeGuide />
+			<InteractiveEvents />
 			<ToolbarSlot>
 				<ToggleFullScreen />
 				<HeaderToolbarPortal>
