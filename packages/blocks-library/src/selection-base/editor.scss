@@ -10,26 +10,26 @@
 		.cf7blocks-selection-base-main-label {
 			display: block;
 		}
+	}
 
-		&:not(.cf7-block-selection-field-editing) {
+	&:not(.cf7-block-selection-field-editing) {
 
-			.cf7blocks-selection-field-preview {
-				display: inline-block;
-				margin: 0 0 0 1em;
-			}
+		.cf7blocks-selection-field-preview {
+			display: inline-block;
+			margin: 0 0 0 1em;
 		}
+	}
 
-		&.cf7-block-selection-field-editing {
+	&.cf7-block-selection-field-editing {
 
-			.cf7blocks-selection-field {
-				display: flex;
-				align-items: center;
+		.cf7blocks-selection-field {
+			display: flex;
+			align-items: center;
+			width: 100%;
+			grid-gap: 6px;
+
+			.components-base-control {
 				width: 100%;
-				grid-gap: 6px;
-
-				.components-base-control {
-					width: 100%;
-				}
 			}
 		}
 	}
