@@ -1,1 +1,1 @@
-## Editorskit Dynamic Query Addon
+## CF7 Blocks
