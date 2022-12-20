@@ -4,9 +4,9 @@
 import { __ } from '@wordpress/i18n';
 import { clone, isEmpty } from 'lodash';
 import { useEffect, useRef } from '@wordpress/element';
-import { trash, plusCircle } from '@wordpress/icons';
+import { trash, plus } from '@wordpress/icons';
 import { ENTER, BACKSPACE } from '@wordpress/keycodes';
-import { Button, TextControl } from '@wordpress/components';
+import { Button, TextControl, ToolbarButton } from '@wordpress/components';
 
 /**
  * Custom Dependencies
@@ -118,15 +118,17 @@ function EditMode( props ) {
 						) }
 						{ ! isLabelFirst && label }
 						<Button
+							isSmall
 							icon={ trash }
+							label={ __( 'Delete Option', 'cf7-blocks' ) }
 							onClick={ () => handleDelete( index ) }
 						/>
 					</div>
 				);
 			} ) }
-			<Button icon={ plusCircle } onClick={ () => handleAdd() }>
+			<ToolbarButton isPressed onClick={ () => handleAdd() }>
 				{ __( 'Add Option', 'cf7-blocks' ) }
-			</Button>
+			</ToolbarButton>
 		</>
 	);
 }

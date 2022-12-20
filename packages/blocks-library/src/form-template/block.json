@@ -12,7 +12,8 @@
     "textdomain": "cf7-blocks",
     "attributes": {},
     "supports": {
-        "inserter": false
+        "inserter": true,
+        "__experimentalToolbar": false
     },
     "styles": []
 }

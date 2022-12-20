@@ -1,22 +1,51 @@
 /**
  * WordPress Dependencies
  */
-import { __ } from '@wordpress/i18n';
-import { useBlockProps } from '@wordpress/block-editor';
+import { __, sprintf } from '@wordpress/i18n';
+import { useDispatch } from '@wordpress/data';
+import {
+	BlockIcon,
+	useBlockProps,
+	useBlockEditContext,
+} from '@wordpress/block-editor';
 import { Placeholder, Button, Icon } from '@wordpress/components';
-import { BlockIcon } from '@wordpress/block-editor';
-
-import { addCard } from '@wordpress/icons';
 
 /**
  * Custom Dependencies
  */
-import { mail, calender, bell, addUser, feedback, cf7blocks } from '../icons';
+import templates from './templates';
+import { cf7blocks } from '../icons';
 
 function FormPlaceholder() {
+	const { clientId } = useBlockEditContext();
+
 	const blockProps = useBlockProps( {
 		className: 'cf7blocks-form-template-block',
 	} );
+
+	const { insertBlocks, removeBlock } = useDispatch( 'core/block-editor' );
+	const { createSuccessNotice } = useDispatch( 'core/notices' );
+
+	const handleInsertion = ( template ) => {
+		console.log( template.template );
+
+		const blocks = wp.blocks.createBlocksFromInnerBlocksTemplate(
+			template.template
+		);
+
+		insertBlocks( blocks );
+		removeBlock( clientId );
+
+		createSuccessNotice(
+			sprintf(
+				__( 'Form template "%s" inserted successfully.' ),
+				template.label
+			),
+			{
+				type: 'snackbar',
+			}
+		);
+	};
 
 	return (
 		<div { ...blockProps }>
@@ -29,60 +58,24 @@ function FormPlaceholder() {
 				) }
 			>
 				<div className="cf7blocks-form-template__grid">
-					<div>
-						<Button
-							variant="secondary"
-							className="cf7blocks-form-template"
-						>
-							<Icon icon={ addCard } size={ 30 } />
-							{ __( 'Basic Contact Form', 'cf7-blocks' ) }
-						</Button>
-					</div>
-					<div>
-						<Button
-							variant="secondary"
-							className="cf7blocks-form-template"
-						>
-							<Icon icon={ mail } size={ 30 } />
-							{ __( 'Newsletter Form', 'cf7-blocks' ) }
-						</Button>
-					</div>
-					<div>
-						<Button
-							variant="secondary"
-							className="cf7blocks-form-template"
-						>
-							<Icon icon={ calender } size={ 30 } />
-							{ __( 'RSVP', 'cf7-blocks' ) }
-						</Button>
-					</div>
-					<div>
-						<Button
-							variant="secondary"
-							className="cf7blocks-form-template"
-						>
-							<Icon icon={ bell } size={ 30 } />
-							{ __( 'Subscribe Form', 'cf7-blocks' ) }
-						</Button>
-					</div>
-					<div>
-						<Button
-							variant="secondary"
-							className="cf7blocks-form-template"
-						>
-							<Icon icon={ addUser } size={ 30 } />
-							{ __( 'Appointment Form', 'cf7-blocks' ) }
-						</Button>
-					</div>
-					<div>
-						<Button
-							variant="secondary"
-							className="cf7blocks-form-template"
-						>
-							<Icon icon={ feedback } size={ 30 } />
-							{ __( 'Feedback Form', 'cf7-blocks' ) }
-						</Button>
-					</div>
+					{ templates.map( ( template ) => {
+						return (
+							<div>
+								<Button
+									variant="secondary"
+									label={ template.help }
+									showTooltip
+									className="cf7blocks-form-template"
+									onClick={ () =>
+										handleInsertion( template )
+									}
+								>
+									<Icon icon={ template.icon } size={ 30 } />
+									{ template.label }
+								</Button>
+							</div>
+						);
+					} ) }
 				</div>
 			</Placeholder>
 		</div>

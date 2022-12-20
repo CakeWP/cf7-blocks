@@ -14,3 +14,4 @@ export { default as bell } from './bell';
 export { default as addUser } from './add-user';
 export { default as feedback } from './feedback';
 export { default as cf7blocks } from './cf7blocks';
+export { default as appointment } from './appointment';

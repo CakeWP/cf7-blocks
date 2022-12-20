@@ -2,6 +2,7 @@
 
 	.cf7blocks-selection-base-select-block {
 		width: 100%;
+		max-width: 100%;
 	}
 
 	.cf7blocks-selection-base-main-label-wrapper {
@@ -26,10 +27,17 @@
 			display: flex;
 			align-items: center;
 			width: 100%;
+			max-width: 100%;
 			grid-gap: 6px;
+			margin-bottom: 5px;
 
 			.components-base-control {
 				width: 100%;
+				max-width: 100%;
+
+				.components-base-control__field {
+					margin-bottom: 0 !important;
+				}
 			}
 		}
 	}
