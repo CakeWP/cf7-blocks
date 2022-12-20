@@ -50,15 +50,14 @@ class ContactForm7 extends Handler {
 							admin_url( '/admin.php?page=cf7blocks-editor' )
 						);
 
-						$default_callback( $contact_form );
+						// $default_callback( $contact_form );
 
 						?>
 							<div class="cf7-block-editor">
 								<iframe 
 									style="width: 100%; height: 600px;" 
 									src="<?php echo esc_url( $editor_page ); ?>"
-								>
-								</iframe>
+								></iframe>
 								<textarea id="wpcf7-form" style="display:none;" name="wpcf7-form" data-config-field="form.body">
 									<?php echo esc_textarea( $contact_form->prop( 'form' ) ); ?>
 								</textarea>
