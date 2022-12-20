@@ -1,0 +1,125 @@
+<div>
+  <script
+    type="text/javascript"
+    src="https://unpkg.com/dangerous-html@0.1.11/dist/default/lib.umd.js"
+  ></script>
+  <link href="./accordion.css" rel="stylesheet" />
+  <div class="accordion-accordion">
+    <div data-role="accordion-container" class="accordion-element">
+      <div class="accordion-details">
+        <span class="accordion-text">
+          <span>Aliquam quaerat voluptatem</span>
+        </span>
+        <span data-role="accordion-content" class="accordion-text1">
+          <span>
+            Sed do eiusmod tempor incididunt ut labore et dolore magna aliquat
+            enim ad minim veniam, quis nostrud
+          </span>
+        </span>
+      </div>
+      <svg
+        viewBox="0 0 1024 1024"
+        data-role="accordion-icon"
+        class="accordion-icon"
+      >
+        <path d="M366 708l196-196-196-196 60-60 256 256-256 256z"></path>
+      </svg>
+    </div>
+    <div
+      data-role="accordion-container"
+      class="accordion-element1 accordion-element"
+    >
+      <div class="accordion-details1">
+        <span class="accordion-text2">
+          <span>Nemo enim ipsam voluptatem quia voluptas</span>
+        </span>
+        <span data-role="accordion-content" class="accordion-text3">
+          <span>
+            Sed do eiusmod tempor incididunt ut labore et dolore magna aliquat
+            enim ad minim veniam, quis nostrud
+          </span>
+        </span>
+      </div>
+      <svg
+        viewBox="0 0 1024 1024"
+        data-role="accordion-icon"
+        class="accordion-icon2"
+      >
+        <path d="M366 708l196-196-196-196 60-60 256 256-256 256z"></path>
+      </svg>
+    </div>
+    <div
+      data-role="accordion-container"
+      class="accordion-element2 accordion-element"
+    >
+      <div class="accordion-details2">
+        <span class="accordion-text4">
+          <span>Magnam aliquam quaerat voluptatem</span>
+        </span>
+        <span data-role="accordion-content" class="accordion-text5">
+          <span>
+            Sed do eiusmod tempor incididunt ut labore et dolore magna aliquat
+            enim ad minim veniam, quis nostrud
+          </span>
+        </span>
+      </div>
+      <svg
+        viewBox="0 0 1024 1024"
+        data-role="accordion-icon"
+        class="accordion-icon4"
+      >
+        <path d="M366 708l196-196-196-196 60-60 256 256-256 256z"></path>
+      </svg>
+    </div>
+    <div>
+      <dangerous-html
+        html="<script>
+  /*
+  Accordion - Code Embed
+  */
+
+  const accordionContainers = document.querySelectorAll('[data-role='accordion-container']'); // All accordion containers
+  const accordionContents = document.querySelectorAll('[data-role='accordion-content']'); // All accordion content
+  const accordionIcons = document.querySelectorAll('[data-role='accordion-icon']'); // All accordion icons
+
+  accordionContents.forEach((accordionContent) => {
+      accordionContent.style.display = 'none'; //Hides all accordion contents
+  });
+
+  accordionContainers.forEach((accordionContainer, index) => {
+      accordionContainer.addEventListener('click', () => {
+          accordionContents.forEach((accordionContent) => {
+              accordionContent.style.display = 'none'; //Hides all accordion contents
+          });
+
+          accordionIcons.forEach((accordionIcon) => {
+              accordionIcon.style.transform = 'rotate(0deg)'; // Resets all icon transforms to 0deg (default)
+          });
+
+          accordionContents[index].style.display = 'flex'; // Shows accordion content
+          accordionIcons[index].style.transform = 'rotate(180deg)'; // Rotates accordion icon 180deg
+      });
+  });
+
+  /*
+  Here's what the above is doing:
+      1. Selects all accordion containers, contents, and icons
+      2. Hides all accordion contents
+      3. Adds an event listener to each accordion container
+      4. When an accordion container is clicked, it:
+          - Hides all accordion contents
+          - Resets all icon transforms to 0deg (default)
+          - Checks if this container has class 'accordion-open'
+              - If it does, it removes class 'accordion-open'
+              - If it doesn't, it:
+                  - Removes class 'accordion-open' from all containers
+                  - Adds class 'accordion-open' to this container
+                  - Shows accordion content
+                  - Rotates accordion icon 180deg
+  */
+</script>
+"
+      ></dangerous-html>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,65 @@
+.quote-quote {
+  gap: var(--dl-space-space-oneandhalfunits);
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-direction: column;
+}
+.quote-quote1 {
+  display: flex;
+  align-items: center;
+  text-overflow: ellipsis;
+  flex-direction: column;
+}
+.quote-quote2 {
+  font-size: 32px;
+  font-style: italic;
+  text-align: center;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: 48px;
+}
+.quote-people {
+  gap: var(--dl-space-space-sixunits);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.quote-person {
+  gap: var(--dl-space-space-unit);
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.quote-avatar {
+  width: 55px;
+  height: 55px;
+  border-radius: var(--dl-radius-radius-round);
+}
+.quote-person-details {
+  gap: var(--dl-space-space-halfunit);
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.quote-text {
+  font-style: normal;
+  font-weight: 600;
+}
+
+
+
+@media(max-width: 767px) {
+  .quote-quote2 {
+    font-size: 24px;
+    margin-top: var(--dl-space-space-twounits);
+    line-height: 36px;
+  }
+  .quote-person {
+    flex-direction: column;
+  }
+  .quote-person-details {
+    align-items: center;
+  }
+}

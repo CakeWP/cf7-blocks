@@ -1,0 +1,22 @@
+.check-check {
+  gap: var(--dl-space-space-halfunit);
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.check-icon {
+  width: 18px;
+  height: 18px;
+}
+.check-text {
+  font-size: 14px;
+  font-family: Poppins;
+  line-height: 24px;
+}
+@media(max-width: 767px) {
+  .check-text {
+    line-height: 21px;
+  }
+}
