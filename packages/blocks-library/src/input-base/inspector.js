@@ -66,6 +66,36 @@ function Inspector( props ) {
 							props.setAttributes( { name: normalizedName } );
 						} }
 					/>
+					{ ! isFileInput && (
+						<TextControl
+							value={ initialValue }
+							label={ __( 'Default Value', 'cf7-blocks' ) }
+							onChange={ ( newInitialValue ) =>
+								props.setAttributes( {
+									initialValue: newInitialValue,
+								} )
+							}
+						/>
+					) }
+					{ isPlaceholderSupported && (
+						<ToggleControl
+							value={ useDefaultValueAsPlaceholder }
+							checked={ useDefaultValueAsPlaceholder }
+							label={ __(
+								'Use value as placeholder',
+								'cf7-blocks'
+							) }
+							help={ __(
+								'Use the default value as the field placeholder.',
+								'cf7-blocks'
+							) }
+							onChange={ ( newStatus ) =>
+								props.setAttributes( {
+									useDefaultValueAsPlaceholder: newStatus,
+								} )
+							}
+						/>
+					) }
 					<ToggleControl
 						checked={ isRequired }
 						onChange={ ( newRequired ) =>
@@ -88,38 +118,6 @@ function Inspector( props ) {
 							'cf7-blocks'
 						) }
 					/>
-
-					{ ! isFileInput && (
-						<TextControl
-							value={ initialValue }
-							label={ __( 'Default Value', 'cf7-blocks' ) }
-							onChange={ ( newInitialValue ) =>
-								props.setAttributes( {
-									initialValue: newInitialValue,
-								} )
-							}
-						/>
-					) }
-
-					{ isPlaceholderSupported && (
-						<ToggleControl
-							value={ useDefaultValueAsPlaceholder }
-							checked={ useDefaultValueAsPlaceholder }
-							label={ __(
-								'Use value as placeholder',
-								'cf7-blocks'
-							) }
-							help={ __(
-								'Use the default value as the field placeholder.',
-								'cf7-blocks'
-							) }
-							onChange={ ( newStatus ) =>
-								props.setAttributes( {
-									useDefaultValueAsPlaceholder: newStatus,
-								} )
-							}
-						/>
-					) }
 				</PanelBody>
 				{ isRangeSupported && (
 					<PanelBody title={ __( 'Range', 'cf7-blocks' ) }>

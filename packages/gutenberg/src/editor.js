@@ -1,8 +1,11 @@
 /**
  * WordPress Dependencies
  */
+import { castArray } from 'lodash';
 import { __ } from '@wordpress/i18n';
 import { render } from '@wordpress/element';
+import { createBlock } from '@wordpress/blocks';
+import { dispatch } from '@wordpress/data';
 import { FullscreenMode } from '@wordpress/interface';
 import { __unstableEditorStyles as EditorStyles } from '@wordpress/block-editor';
 
@@ -44,10 +47,16 @@ function handleSave( content, textArea ) {
  * Handles the loading state of the editor.
  * And dispatches a custom load event to the parent frame.
  *
+ * @param {boolean} isInitial - true if initially loading the new cf7.
+ *
  * @return {void}
  */
-function handleLoad() {
+function handleLoad( isInitial ) {
 	parent.window.dispatchEvent( new CustomEvent( 'cf7blocks-editor-loaded' ) );
+
+	if ( isInitial ) {
+		dispatch( 'core/interface' ).toggleFeature( 'cf7BlocksWelcomeGuide' );
+	}
 }
 
 /**
@@ -73,17 +82,33 @@ export function createGutenbergEditor( textAreaSelector ) {
 
 	container.appendChild( editorRoot );
 
+	const isInitial = textArea?.dataset?.initial === 'initial';
+
 	render(
 		<IsolatedBlockEditor
 			settings={ cf7BlockEditorSettings }
 			onSaveContent={ ( content ) => handleSave( content, textArea ) }
 			onLoad={ ( parser ) => {
-				return textArea ? parser( textArea.value ) : [];
+				if ( textArea ) {
+					const placeholderBlock = createBlock(
+						'cf7-blocks/template'
+					);
+
+					return isInitial
+						? castArray( placeholderBlock )
+						: parser( textArea.value );
+				}
+
+				return [];
 			} }
 			onError={ () => document.location.reload() }
 			renderMoreMenu={ () => <MoreMenu /> }
 		>
-			<EditorLoaded onLoaded={ () => handleLoad() } />
+			<EditorLoaded
+				onLoaded={ () => {
+					handleLoad( isInitial );
+				} }
+			/>
 			<EditorStyles styles={ cf7BlockEditorSettings.editor.styles } />
 			<FullscreenMode isActive />
 			<WelcomeGuide />

@@ -14,7 +14,6 @@ import { Placeholder, Button, Icon } from '@wordpress/components';
  * Custom Dependencies
  */
 import templates from './templates';
-import { cf7blocks } from '../icons';
 
 function FormPlaceholder() {
 	const { clientId } = useBlockEditContext();
@@ -27,8 +26,6 @@ function FormPlaceholder() {
 	const { createSuccessNotice } = useDispatch( 'core/notices' );
 
 	const handleInsertion = ( template ) => {
-		console.log( template.template );
-
 		const blocks = wp.blocks.createBlocksFromInnerBlocksTemplate(
 			template.template
 		);
@@ -50,7 +47,6 @@ function FormPlaceholder() {
 	return (
 		<div { ...blockProps }>
 			<Placeholder
-				icon={ <BlockIcon icon={ cf7blocks } /> }
 				label={ __( 'Select Form', 'cf7-blocks' ) }
 				instructions={ __(
 					'Quickly start creating forms with a pre-made form template',

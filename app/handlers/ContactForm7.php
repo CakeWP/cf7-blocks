@@ -42,8 +42,6 @@ class ContactForm7 extends Handler {
 
 						$default_callback = $panels['form-panel']['callback'];
 
-						// var_dump( $contact_form->get_properties() );
-
 						if ( is_int( $contact_form->id() ) && false === $contact_form->prop( '_is_using_cf7blocks-block-editor' ) ) {
 							$default_callback( $contact_form );
 							return;
@@ -51,8 +49,9 @@ class ContactForm7 extends Handler {
 
 						$editor_page = \add_query_arg(
 							array(
-								'id'    => $contact_form->id(),
-								'nonce' => wp_create_nonce( 'cf7blocks-edit-' . $contact_form->id() ),
+								'id'      => $contact_form->id(),
+								'initial' => $contact_form->initial(),
+								'nonce'   => wp_create_nonce( 'cf7blocks-edit-' . $contact_form->id() ),
 							),
 							admin_url( '/admin.php?page=cf7blocks-editor' )
 						);

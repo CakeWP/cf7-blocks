@@ -4,7 +4,7 @@
     "name": "cf7-blocks/template",
     "title": "Form",
     "category": "text",
-    "description": "Select your desired template",
+    "description": "Quickly start creating forms with a pre-made form template",
     "keywords": [
         "input"
     ],
@@ -12,7 +12,7 @@
     "textdomain": "cf7-blocks",
     "attributes": {},
     "supports": {
-        "inserter": true,
+        "inserter": false,
         "__experimentalToolbar": false
     },
     "styles": []

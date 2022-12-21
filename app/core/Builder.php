@@ -57,6 +57,16 @@ class Builder {
 	}
 
 	/**
+	 * Checks if the current contact form (being edited) is not yet saved to the database.
+	 *
+	 * @return bool - True if initial, otherwise false.
+	 */
+	public function is_initial() {
+		// phpcs:ignore
+		return isset( $_GET['initial'] ) ? \sanitize_text_field( \wp_unslash( $_GET['initial'] ) ) : false;
+	}
+
+	/**
 	 * Registers a hidden menu page for the builder.
 	 *
 	 * @return void
@@ -85,8 +95,8 @@ class Builder {
 
 				?>
 					<div class="cf7-editor-root">
-						<textarea id="cf7-blocks-root-text-area">
-							<?php echo esc_textarea( $form_content ); ?>
+						<textarea id="cf7-blocks-root-text-area" data-initial="<?php echo esc_html( $this->is_initial() ? 'initial' : 'saved' ); ?>">
+							<?php echo esc_textarea( ( $form_content ) ); ?>
 						</textarea>
 					</div>
 				<?php

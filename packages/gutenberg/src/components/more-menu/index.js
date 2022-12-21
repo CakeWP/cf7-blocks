@@ -2,8 +2,9 @@
  * WordPress Components
  */
 import { __ } from '@wordpress/i18n';
-import { useDispatch } from '@wordpress/data';
-import { MenuGroup, MenuItem, Icon } from '@wordpress/components';
+import { useDispatch, select } from '@wordpress/data';
+import { useEffect } from '@wordpress/element';
+import { MenuGroup, MenuItem } from '@wordpress/components';
 import { help, external, starEmpty, bug, sparkles } from '@wordpress/icons';
 
 /**
@@ -11,7 +12,7 @@ import { help, external, starEmpty, bug, sparkles } from '@wordpress/icons';
  */
 import { coffee } from '../../icons';
 
-function MoreMenu() {
+function MoreMenu( props ) {
 	const { toggleFeature } = useDispatch( 'core/interface' );
 
 	return (

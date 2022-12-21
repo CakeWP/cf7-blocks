@@ -44,7 +44,28 @@ abstract class Handler {
 		$default_settings = array(
 			'editor'               => $this->editor->get_editor_settings(),
 			'iso'                  => array(
-				'blocks'      => array(),
+				'blocks'      => array(
+					'allowBlocks' => array(
+						'core/paragraph',
+						'core/heading',
+						'core/separator',
+						'core/spacer',
+						'core/columns',
+						'core/column',
+						'core/quote',
+						'core/code',
+						'core/shortcode',
+						'core/group',
+						'core/list',
+						'core/list-item',
+						'core/html',
+						'cf7-blocks/template',
+						'cf7-blocks/input-base',
+						'cf7-blocks/selection-base',
+						'cf7-blocks/submit',
+						'cf7-blocks/acceptance',
+					),
+				),
 				'moreMenu'    => array(
 					'topToolbar' => true,
 				),
