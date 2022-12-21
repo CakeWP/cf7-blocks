@@ -20,6 +20,8 @@
             "default": ""
         }
     },
-    "supports": {},
+    "supports": {
+        "multiple": false
+    },
     "styles": []
 }
