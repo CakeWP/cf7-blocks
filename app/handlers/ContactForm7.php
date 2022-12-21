@@ -42,6 +42,13 @@ class ContactForm7 extends Handler {
 
 						$default_callback = $panels['form-panel']['callback'];
 
+						// var_dump( $contact_form->get_properties() );
+
+						if ( is_int( $contact_form->id() ) && false === $contact_form->prop( '_is_using_cf7blocks-block-editor' ) ) {
+							$default_callback( $contact_form );
+							return;
+						}
+
 						$editor_page = \add_query_arg(
 							array(
 								'id'    => $contact_form->id(),
@@ -50,10 +57,8 @@ class ContactForm7 extends Handler {
 							admin_url( '/admin.php?page=cf7blocks-editor' )
 						);
 
-						// $default_callback( $contact_form );
-
 						?>
-							<div class="cf7-block-editor">
+							<div class="cf7-block-editor is-loading">
 								<iframe 
 									style="width: 100%; height: 600px;" 
 									src="<?php echo esc_url( $editor_page ); ?>"

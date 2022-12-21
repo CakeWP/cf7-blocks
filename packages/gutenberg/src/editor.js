@@ -11,6 +11,7 @@ import { __unstableEditorStyles as EditorStyles } from '@wordpress/block-editor'
  */
 import IsolatedBlockEditor, {
 	ToolbarSlot,
+	EditorLoaded,
 } from '@automattic/isolated-block-editor';
 import { HeaderToolbarPortal } from './portals';
 import {
@@ -27,7 +28,7 @@ import {
  * @param {string} content - Content to update.
  * @param {HTMLTextAreaElement} textArea - Target Text area.
  */
-export function handleSave( content, textArea ) {
+function handleSave( content, textArea ) {
 	textArea.value = content;
 
 	parent.window.dispatchEvent(
@@ -37,6 +38,16 @@ export function handleSave( content, textArea ) {
 			},
 		} )
 	);
+}
+
+/**
+ * Handles the loading state of the editor.
+ * And dispatches a custom load event to the parent frame.
+ *
+ * @return {void}
+ */
+function handleLoad() {
+	parent.window.dispatchEvent( new CustomEvent( 'cf7blocks-editor-loaded' ) );
 }
 
 /**
@@ -72,6 +83,7 @@ export function createGutenbergEditor( textAreaSelector ) {
 			onError={ () => document.location.reload() }
 			renderMoreMenu={ () => <MoreMenu /> }
 		>
+			<EditorLoaded onLoaded={ () => handleLoad() } />
 			<EditorStyles styles={ cf7BlockEditorSettings.editor.styles } />
 			<FullscreenMode isActive />
 			<WelcomeGuide />

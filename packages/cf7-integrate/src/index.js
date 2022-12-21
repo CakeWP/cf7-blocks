@@ -36,3 +36,9 @@ window.addEventListener( 'load', () => {
 		);
 	};
 } );
+
+window.addEventListener( 'cf7blocks-editor-loaded', () => {
+	const cf7BlockEditor = document.querySelector( '.cf7-block-editor' );
+
+	cf7BlockEditor.classList.remove( 'is-loading' );
+} );

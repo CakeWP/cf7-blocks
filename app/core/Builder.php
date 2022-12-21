@@ -62,7 +62,8 @@ class Builder {
 	 * @return void
 	 */
 	public function register_hidden_page() {
-		add_menu_page(
+		add_submenu_page(
+			null,
 			__( 'Gutenberg Editor', 'cf7-blocks' ),
 			__( 'CF7 Block Editor', 'cf7-blocks' ),
 			'wpcf7_edit_contact_form',
@@ -74,17 +75,18 @@ class Builder {
 					return;
 				}
 
-				$form_id      = $this->get_current_form_id();
-				$contact_form = \WPCF7_ContactForm::get_instance( $form_id );
+				$form_id = $this->get_current_form_id();
 
 				$handler = new \CakeWP\CF7Blocks\Handlers\ContactForm7();
 
 				$handler->load_gutenberg_editor( '#cf7-blocks-root-text-area' );
 
+				$form_content = is_null( $form_id ) ? '' : \WPCF7_ContactForm::get_instance( $form_id )->prop( 'form' );
+
 				?>
 					<div class="cf7-editor-root">
 						<textarea id="cf7-blocks-root-text-area">
-							<?php echo $contact_form->prop( 'form' ); ?>
+							<?php echo esc_textarea( $form_content ); ?>
 						</textarea>
 					</div>
 				<?php

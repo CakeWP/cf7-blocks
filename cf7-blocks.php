@@ -1,16 +1,17 @@
 <?php
 /**
- * Plugin Name: Contact Form 7 Blocks
- * Description: Integrates native gutenberg editor in contact form 7.
- * Author: cakewp
- * Author URI:  https://example.com/
+ * Plugin Name: CF7 Blocks
+ * Plugin URI: https://cf7blocks.com
+ * Description: Effortlessly Create Stunning Contact Forms with CF7 Blocks and Contact Form 7
  * Version: 1.0.0
- * Requires at least: 5.8.3
- * Requires PHP: 5.7
+ * Author: munirkamal
+ * Author URI: https://www.munirkamal.com/
  * Text Domain: cf7-blocks
- * Domain Path: /languages
- * Tested up to: 6.0.1
+ * Domain Path: languages
  *
+ * @category Gutenberg
+ * @author Munir Kamal
+ * @version 1.0
  * @package CF7Blocks
  */
 
@@ -57,7 +58,9 @@ if ( ! class_exists( 'CF7_Blocks' ) ) {
 		public function __construct() {
 			if ( ! static::$loaded ) {
 				static::$loaded = true;
-				
+
+				new \CakeWP\CF7Blocks\Support();
+
 				// Core.
 				new \CakeWP\CF7Blocks\Assets();
 				new \CakeWP\CF7Blocks\Shortcode();
