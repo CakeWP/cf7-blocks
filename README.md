@@ -37,3 +37,16 @@ To create a new form with CF7 Blocks, follow these steps:
 ### Is CF7 Blocks compatible with the Classic Editor?
 
 CF7 Blocks is designed to work exclusively with the WordPress block editor. It is not compatible with the Classic Editor.
+
+## Get Connected
+
+[![facebook](https://user-images.githubusercontent.com/48084051/208910904-d71287c7-a1d8-49d3-9056-d49ccf1aafaa.svg)](https://www.facebook.com/munir.kamal)
+[![twitter](https://user-images.githubusercontent.com/48084051/208911049-c8495c74-1fa1-4061-8a9a-e99ebce8f748.svg)](https://twitter.com/m_munirkamal)
+
+## Subscribe to newsletter
+
+To get latest updates regarding cf7blocks, Please subscribe to this newsletter: https://cf7blocks.substack.com/
+
+## Support
+
+[![206910179-5e94fcf7-449f-45de-9197-bcd8129ca373](https://user-images.githubusercontent.com/48084051/208909435-1286912b-3693-4c01-aaa4-d7bdbbb355cd.svg)](https://www.buymeacoffee.com/munirkamal)
