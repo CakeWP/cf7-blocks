@@ -21,12 +21,7 @@ class Support {
 
 		// Adding a new property.
 		add_filter( 'wpcf7_pre_construct_contact_form_properties', array( $this, 'add_property' ), 10, 2 );
-		// add_action(
-		// 'wpcf7_after_save',
-		// function( $instance ) {
-		// var_dump( $instance->get_properties() );
-		// }
-		// );
+
 	}
 
 	/**

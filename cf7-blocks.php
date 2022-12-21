@@ -59,15 +59,22 @@ if ( ! class_exists( 'CF7_Blocks' ) ) {
 			if ( ! static::$loaded ) {
 				static::$loaded = true;
 
-				new \CakeWP\CF7Blocks\Support();
+				add_action(
+					'wpcf7_init',
+					function() {
+						// Core.
+						new \CakeWP\CF7Blocks\Assets();
+						new \CakeWP\CF7Blocks\Support();
+						new \CakeWP\CF7Blocks\Shortcode();
+						new \CakeWP\CF7Blocks\Core\Builder();
 
-				// Core.
-				new \CakeWP\CF7Blocks\Assets();
-				new \CakeWP\CF7Blocks\Shortcode();
-				new \CakeWP\CF7Blocks\Core\Builder();
+						// Handlers.
+						new \CakeWP\CF7Blocks\Handlers\ContactForm7();
+					}
+				);
 
-				// Handlers.
-				new \CakeWP\CF7Blocks\Handlers\ContactForm7();
+				// Installation notice.
+				new \CakeWP\CF7Blocks\Notices\InstallContactFormNotice();
 
 			}
 		}
