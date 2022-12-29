@@ -1,4 +1,4 @@
-=== CF7 Blocks - Contact Form 7 Block Editor Integration ===
+=== Block Editor Kit for Contact Form 7 - CF7 Blocks ===
 
 Contributors: munirkamal
 Donate link: https://www.buymeacoffee.com/munirkamal

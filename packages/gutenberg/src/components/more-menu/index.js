@@ -2,15 +2,14 @@
  * WordPress Components
  */
 import { __ } from '@wordpress/i18n';
-import { useDispatch, select } from '@wordpress/data';
-import { useEffect } from '@wordpress/element';
+import { useDispatch } from '@wordpress/data';
 import { MenuGroup, MenuItem } from '@wordpress/components';
-import { help, external, starEmpty, bug, sparkles } from '@wordpress/icons';
+import { help, external, starEmpty, sparkles, info } from '@wordpress/icons';
 
 /**
  * Custom Dependencies
  */
-import { coffee } from '../../icons';
+import { coffee, github } from '../../icons';
 
 function MoreMenu( props ) {
 	const { toggleFeature } = useDispatch( 'core/interface' );
@@ -24,11 +23,20 @@ function MoreMenu( props ) {
 				{ __( 'Show Guide', 'cf7-blocks' ) }
 			</MenuItem>
 
-			<MenuItem icon={ starEmpty }>
+			<MenuItem icon={ sparkles } iconSize={ 25 }>
 				{ __( 'Submit a Review', 'cf7-blocks' ) }
 			</MenuItem>
-			<MenuItem icon={ bug }>
+
+			<MenuItem icon={ info } iconSize={ 25 }>
 				{ __( 'Report a bug', 'cf7-blocks' ) }
+			</MenuItem>
+			<MenuItem
+				icon={ github }
+				iconSize={ 25 }
+				target="__blank"
+				href="https://github.com/CakeWP/cf7-blocks"
+			>
+				{ __( 'Contribute', 'cf7-blocks' ) }
 			</MenuItem>
 			<MenuItem
 				target="__blank"

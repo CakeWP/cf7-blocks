@@ -31,11 +31,12 @@ function Inspector( props ) {
 		<>
 			<InspectorControls>
 				<PanelBody title={ __( 'Generated Shortcode', 'cf7-blocks' ) }>
-					<code>
-						{ convertSelectionBlockToCF7Shortcode(
+					<TextControl
+						style={ { maxWidth: '100%' } }
+						value={ convertSelectionBlockToCF7Shortcode(
 							props.attributes
 						) }
-					</code>
+					/>
 				</PanelBody>
 				<PanelBody title={ __( 'General', 'cf7-blocks' ) }>
 					<TextControl

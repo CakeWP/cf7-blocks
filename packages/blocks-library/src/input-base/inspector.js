@@ -45,9 +45,12 @@ function Inspector( props ) {
 		<>
 			<InspectorControls>
 				<PanelBody title={ __( 'Generated Shortcode', 'cf7-blocks' ) }>
-					<code>
-						{ convertFieldBlockToCF7Shortcode( props.attributes ) }
-					</code>
+					<TextControl
+						style={ { maxWidth: '100%' } }
+						value={ convertFieldBlockToCF7Shortcode(
+							props.attributes
+						) }
+					/>
 				</PanelBody>
 				<PanelBody title={ __( 'General', 'cf7-blocks' ) }>
 					<TextControl

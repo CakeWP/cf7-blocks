@@ -1,7 +1,7 @@
 /**
  * WordPress Dependencies
  */
-import { isEmpty } from 'lodash';
+import { isEmpty, omit, pick } from 'lodash';
 import { __ } from '@wordpress/i18n';
 import { useBlockProps } from '@wordpress/block-editor';
 /**
@@ -15,15 +15,31 @@ export default function edit( props ) {
 		className: classnames( 'cf7-submit-field' ),
 	} );
 
+	const blockPropsWithoutStyles = omit( blockProps, [ 'style' ] );
+
 	const { id, label } = props.attributes;
+
+	const buttonStyleProps = [
+		'paddingTop',
+		'paddingRight',
+		'paddingBottom',
+		'paddingLeft',
+		'padding',
+		'fontSize',
+		'lineHeight',
+	];
 
 	return (
 		<>
-			<div { ...blockProps }>
+			<div
+				{ ...blockPropsWithoutStyles }
+				style={ omit( blockProps?.style, buttonStyleProps ) }
+			>
 				<input
 					id={ id }
 					type="submit"
 					value={ isEmpty( label ) ? 'Submit' : label }
+					style={ pick( blockProps?.style, buttonStyleProps ) }
 				/>
 			</div>
 			<Inspector { ...props } />

@@ -18,6 +18,7 @@ class Shortcode {
 	 * @return void
 	 */
 	public function __construct() {
+		add_filter( 'wpcf7_autop_or_not', '__return_false' );
 		add_filter( 'do_shortcode_tag', array( $this, 'process_blocks' ), 10, 2 );
 	}
 
@@ -30,6 +31,7 @@ class Shortcode {
 	 * @return string Output.
 	 */
 	public function process_blocks( $output, $tag ) {
+
 		if ( 'contact-form-7' !== $tag ) {
 			return $output;
 		}
