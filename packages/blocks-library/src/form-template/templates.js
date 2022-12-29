@@ -142,11 +142,10 @@ const templates = [
 					'cf7-blocks/input-base',
 					{
 						type: 'text',
-						id: 'name',
 						initialValue: 'Enter your name',
 						isRequired: true,
 						label: 'Name',
-						name: 'name',
+						name: 'your-name',
 						requiredText: '*',
 						showLabel: true,
 						tagName: 'input',
@@ -158,11 +157,10 @@ const templates = [
 					'cf7-blocks/input-base',
 					{
 						type: 'email',
-						id: 'email',
 						initialValue: 'Enter your email',
 						isRequired: true,
 						label: 'Email',
-						name: 'email',
+						name: 'your-email',
 						requiredText: '*',
 						showLabel: true,
 						tagName: 'input',
@@ -176,7 +174,6 @@ const templates = [
 				'cf7-blocks/selection-base',
 				{
 					type: 'radio',
-					id: 'are-you-coming',
 					mainLabel: 'Are you coming?',
 					isRequired: true,
 					showLabel: true,
@@ -199,7 +196,6 @@ const templates = [
 				'cf7-blocks/input-base',
 				{
 					type: 'textarea',
-					id: 'message',
 					initialValue: 'Add some details (optional)',
 					isRequired: false,
 					label: 'Other Details',

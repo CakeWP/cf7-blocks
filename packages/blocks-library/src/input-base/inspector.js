@@ -73,6 +73,9 @@ function Inspector( props ) {
 						<TextControl
 							value={ initialValue }
 							label={ __( 'Default Value', 'cf7-blocks' ) }
+							type={
+								CF7BLOCKS_RANGE_SUPPORTED_INPUT_TYPES[ type ]
+							}
 							onChange={ ( newInitialValue ) =>
 								props.setAttributes( {
 									initialValue: newInitialValue,

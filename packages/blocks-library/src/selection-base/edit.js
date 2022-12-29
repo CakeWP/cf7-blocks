@@ -15,7 +15,7 @@ import classnames from 'classnames';
 import PreviewMode from './components/preview-mode';
 import EditMode from './components/edit-mode';
 import generateFieldName from '../utils/generate-name';
-import SelectPreviewMode from './components/select-preview-modo';
+import SelectPreviewMode from './components/select-preview-mode';
 
 export default function edit( props ) {
 	const blockProps = useBlockProps( {
