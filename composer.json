@@ -23,8 +23,5 @@
 	"prefer-stable": true,
 	"scripts": {
 		"post-install-cmd": "chmod +x ./.dev/scripts/set-phpcs-install-path.sh && ./.dev/scripts/set-phpcs-install-path.sh"
-	},
-	"require": {
-		"paquettg/php-html-parser": "^3.1"
 	}
 }

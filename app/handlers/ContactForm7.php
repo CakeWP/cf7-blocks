@@ -97,13 +97,26 @@ class ContactForm7 extends Handler {
 
 		ob_end_clean();
 
-		$dom = new \PHPHtmlParser\Dom();
+		// Disable the display of libxml errors.
+		libxml_use_internal_errors( true );
 
-		$dom->loadStr( $content );
+		// Create a new DOMDocument object.
+		$doc = new \DOMDocument();
 
-		$tag_manager = $dom->find( '#tag-generator-list' );
+		// Load the HTML string into the DOMDocument object.
+		$doc->loadHTML( $content );
 
-		echo $tag_manager->outerHtml;
+		$element = $doc->getElementById( 'tag-generator-list' );
+
+		$tag_generator = $doc->saveHTML( $element );
+
+		// Clear the libxml error buffer.
+		libxml_clear_errors();
+
+		// Re-enable the display of libxml errors.
+		libxml_use_internal_errors( false );
+
+		echo $tag_generator;
 
 		echo '<br />';
 		echo '<br />';
