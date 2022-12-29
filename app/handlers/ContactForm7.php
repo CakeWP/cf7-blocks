@@ -39,8 +39,11 @@ class ContactForm7 extends Handler {
 					'callback' => function( $contact_form ) use ( $panels ) {
 
 						$default_callback = $panels['form-panel']['callback'];
+						$_is_using_cf7_block_editor = $contact_form->prop( '_is_using_cf7blocks-block-editor' );
 
-						if ( is_int( $contact_form->id() ) && false === $contact_form->prop( '_is_using_cf7blocks-block-editor' ) ) {
+						$should_render_editor = false !== $_is_using_cf7_block_editor && ! empty( $_is_using_cf7_block_editor ) && 'true' !== $contact_form->pref( 'cf7_blocks_disable' );
+
+						if ( is_int( $contact_form->id() ) && ! $should_render_editor ) {
 							$default_callback( $contact_form );
 							return;
 						}
@@ -53,6 +56,10 @@ class ContactForm7 extends Handler {
 							),
 							admin_url( '/admin.php?page=cf7blocks-editor' )
 						);
+
+						if ( 'true' === $contact_form->pref( 'cf7_blocks_enable_shortcodes_picker' ) ) {
+							$this->tags_manager( $default_callback, $contact_form );
+						}
 
 						?>
 							<div class="cf7-block-editor is-loading">
@@ -74,6 +81,35 @@ class ContactForm7 extends Handler {
 	}
 
 	/**
+	 * Parses the tag manager from cf7 default output.
+	 *
+	 * @param  mixed  $callback - CF7 Callback.
+	 * @param object $contact_form - CF7 instance.
+	 *
+	 * @return void - Tags manager.
+	 */
+	public function tags_manager( $callback, $contact_form ) {
+
+		ob_start();
+		$callback( $contact_form );
+
+		$content = ob_get_contents();
+
+		ob_end_clean();
+
+		$dom = new \PHPHtmlParser\Dom();
+
+		$dom->loadStr( $content );
+
+		$tag_manager = $dom->find( '#tag-generator-list' );
+
+		echo $tag_manager->outerHtml;
+
+		echo '<br />';
+		echo '<br />';
+	}
+
+	/**
 	 * Loads the gutenberg editor.
 	 *
 	 * @param string $selector - Selector.
@@ -81,7 +117,6 @@ class ContactForm7 extends Handler {
 	 * @return void
 	 */
 	public function load_gutenberg_editor( $selector ) {
-
 		$this->load_editor( $selector );
 	}
 

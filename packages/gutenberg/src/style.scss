@@ -9,13 +9,18 @@
 @import "./components/branding/style.scss";
 @import "./components/welcome-guide/style.scss";
 
+#wpbody-content {
+	padding-bottom: 0 !important;
+}
+
+
 .cf7-blockeditor-root {
 	height: 100vh;
 
 	& > div,
 	.iso-editor {
 		height: 100%;
-		overflow: scroll;
+		overflow: hidden;
 	}
 
 	.iso-editor {

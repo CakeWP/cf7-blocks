@@ -23,11 +23,21 @@ function MoreMenu( props ) {
 				{ __( 'Show Guide', 'cf7-blocks' ) }
 			</MenuItem>
 
-			<MenuItem icon={ sparkles } iconSize={ 25 }>
+			<MenuItem
+				iconSize={ 25 }
+				target="__blank"
+				icon={ sparkles }
+				href="https://wordpress.org/support/plugin/cf7-blocks/reviews/#new-post"
+			>
 				{ __( 'Submit a Review', 'cf7-blocks' ) }
 			</MenuItem>
 
-			<MenuItem icon={ info } iconSize={ 25 }>
+			<MenuItem
+				icon={ info }
+				iconSize={ 25 }
+				target="__blank"
+				href="https://wordpress.org/support/plugin/cf7-blocks/"
+			>
 				{ __( 'Report a bug', 'cf7-blocks' ) }
 			</MenuItem>
 			<MenuItem
@@ -45,6 +55,9 @@ function MoreMenu( props ) {
 			>
 				{ __( 'Visit Website', 'cf7-blocks' ) }
 			</MenuItem>
+
+			<hr />
+
 			<MenuItem
 				icon={ coffee }
 				target="__blank"
