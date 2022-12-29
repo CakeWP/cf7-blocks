@@ -22,7 +22,7 @@ Don't waste any more time trying to fit your forms into the old editor - upgrade
 
 == Installation ==
 
-Make sure you have Contact Form 7 plugin installed to use CF7 Blocks.
+Make sure you have Contact Form 7 plugin installed to use CF7 Blocks.`
 
 1. Install Contact Form 7 if it is not already installed.
 2. Install CF7 Blocks either via the WordPress.org plugin repository or by uploading the files to your server.
@@ -44,6 +44,12 @@ To create a new form with CF7 Blocks, follow these steps:
 
 CF7 Blocks is designed to work exclusively with the WordPress block editor. It is not compatible with the Classic Editor.
 
+== Screenshots ==
+1. Screenshot 1
+2. Screenshot 2
+3. Screenshot 3
+4. Screenshot 4
+5. Screenshot 5
 
 == Changelog ==
 
