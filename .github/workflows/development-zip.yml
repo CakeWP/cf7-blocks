@@ -1,8 +1,8 @@
-name: Build development zip file
+name: Build development zip
 on: push
 jobs:
     build:
-        name: Build, test and zip
+        name: Build development zip
         runs-on: ubuntu-latest
         strategy:
             fail-fast: false
@@ -19,19 +19,8 @@ jobs:
                   php-version: '${{ matrix.php }}'
                   tools: composer:v1
 
-            - name: Get Composer cache directory
-              id: composer-cache
-              run: |
-                  echo "::set-output name=dir::$(composer config cache-files-dir)"
-            - name: Use Composer cache
-              uses: actions/cache@master
-              with:
-                  path: ${{ steps['composer-cache'].outputs.dir }}
-                  key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
-                  restore-keys: |
-                      ${{ runner.os }}-composer-
             - name: Build autoloader
-              run: composer install --prefer-dist --no-progress --no-suggest --no-dev
+              run: composer install --no-dev
 
             - name: Using Node version ${{ matrix.node-version }}
               uses: actions/setup-node@v1
