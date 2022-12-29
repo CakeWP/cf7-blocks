@@ -23,6 +23,26 @@ Make sure you have Contact Form 7 plugin installed to use CF7 Blocks.
 3. Activate CF7 Blocks.
 4. Create a new form.
 
+## Disable the CF7 Block Editor
+
+If you specifically want to disable the block editor on certain contact forms. You use the following additional settings:
+
+<img width="1087" alt="Screenshot 2022-12-29 at 5 07 50 PM" src="https://user-images.githubusercontent.com/48084051/209949058-f56dea9e-d7c9-4b54-b611-832064b8d421.png">
+
+```
+cf7_blocks_disable: true
+```
+
+## Enable the Native Shortcode Picker
+
+As the cf7 blocks does not currently supports all the native cf7 fields. Although you can insert the shortcodes in the block editor, You can also enable the native cf7 shortcode generator with the following additional settings:
+
+<img width="1089" alt="Screenshot 2022-12-29 at 5 08 55 PM" src="https://user-images.githubusercontent.com/48084051/209949177-ed4b3edc-e2bd-44d1-887e-0eba1903c071.png">
+
+```
+cf7_blocks_enable_shortcodes_picker: true
+```
+
 ## FAQs
 
 ### How do I create a form with CF7 Blocks?
