@@ -79,7 +79,7 @@
                 "textarea"
             ]
         },
-        "styles": {
+        "style": {
             "type": "object",
             "default": {
                 "spacing": {

@@ -18,17 +18,25 @@
         "id": {
             "type": "string",
             "default": ""
+        },
+        "style": {
+            "type": "object",
+            "default": {
+                "spacing": {
+                    "margin": {
+                        "top": "0",
+                        "right": "0",
+                        "left": "0",
+                        "bottom": "20px"
+                    }
+                }
+            }
         }
     },
     "supports": {
         "multiple": false,
         "spacing": {
-            "margin": true,
-            "padding": true
-        },
-        "typography": {
-            "fontSize": true,
-            "lineHeight": true
+            "margin": true
         }
     },
     "styles": []
