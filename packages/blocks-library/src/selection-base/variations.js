@@ -2,7 +2,7 @@
  * WordPress Dependencies
  */
 import { __ } from '@wordpress/i18n';
-import { check, lifesaver, archive } from '@wordpress/icons';
+import { archive, chevronDown } from '@wordpress/icons';
 import { registerBlockVariation } from '@wordpress/blocks';
 
 /**
@@ -41,7 +41,7 @@ const variations = [
 	},
 	{
 		name: 'select',
-		icon: archive,
+		icon: chevronDown,
 		title: __( 'Select', 'cf7-blocks' ),
 		description: __( 'Create basic select field.' ),
 		isDefault: false,

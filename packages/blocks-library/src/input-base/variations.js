@@ -2,7 +2,7 @@
  * WordPress Dependencies
  */
 import { __ } from '@wordpress/i18n';
-import { globe, upload, mobile, comment } from '@wordpress/icons';
+import { globe, upload, comment } from '@wordpress/icons';
 import { registerBlockVariation } from '@wordpress/blocks';
 
 /**

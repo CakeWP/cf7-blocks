@@ -37,7 +37,7 @@
         },
         "showLabel": {
             "type": "boolean",
-            "default": false
+            "default": true
         },
         "label": {
             "type": "string",
