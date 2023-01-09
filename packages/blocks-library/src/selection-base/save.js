@@ -10,18 +10,20 @@ import { useBlockProps } from '@wordpress/block-editor';
 import { convertSelectionBlockToCF7Shortcode } from '../utils/convert-to-cf7-shortcode';
 import { WithLabel } from '../components';
 
+import processInputLabel from '../utils/process-input-label';
+
 export default function save( props ) {
 	const shortcode = convertSelectionBlockToCF7Shortcode( props.attributes );
 
 	return (
 		<div { ...useBlockProps.save() }>
 			<WithLabel
-				label={ props.attributes.mainLabel }
+				label={ processInputLabel(
+					props.attributes.mainLabel,
+					props.attributes.isRequired
+				) }
 				showLabel={ props.attributes.showLabel }
 			>
-				{ props.attributes.showLabel && props.attributes.isRequired
-					? props.attributes.requiredText
-					: '' }
 				<RawHTML>{ shortcode }</RawHTML>
 			</WithLabel>
 		</div>

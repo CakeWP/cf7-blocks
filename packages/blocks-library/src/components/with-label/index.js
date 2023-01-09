@@ -3,6 +3,8 @@
  */
 import PropTypes from 'prop-types';
 
+import { RawHTML } from '@wordpress/element';
+
 function WithLabel( props ) {
 	if ( ! props.showLabel ) {
 		return props.children;
@@ -10,7 +12,7 @@ function WithLabel( props ) {
 
 	return (
 		<label>
-			{ props.label }
+			<RawHTML>{ props.label }</RawHTML>
 			{ props.children }
 		</label>
 	);
