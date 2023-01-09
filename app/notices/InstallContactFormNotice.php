@@ -34,7 +34,7 @@ class InstallContactFormNotice {
 
 		$installation_link = add_query_arg(
 			array(
-				's'    => 'Contact form',
+				's'    => 'Contact form 7',
 				'tab'  => 'search',
 				'type' => 'term',
 			),
