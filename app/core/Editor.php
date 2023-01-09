@@ -31,46 +31,6 @@ class Editor {
 		add_filter( 'block_editor_settings_all', array( $this, 'block_editor_settings_all' ) );
 		add_action( 'wp_footer', array( $this, 'wp_add_iframed_editor_assets_html' ), 20 );
 		add_filter( 'should_load_block_editor_scripts_and_styles', '__return_true' );
-		add_filter( 'wp_theme_json_data_theme', array( $this, 'wp_theme_json_data_theme' ) );
-	}
-
-	/**
-	 * Provide theme.json
-	 *
-	 * @param \WP_Theme_JSON_Data_Gutenberg $json JSON.
-	 * @return \WP_Theme_JSON_Data_Gutenberg
-	 */
-	public function wp_theme_json_data_theme( $json ) {
-		$theme = new \WP_Theme_JSON_Data_Gutenberg(
-			array(
-				'version'  => 2,
-				'settings' => array(
-					'color'      => array(
-						'background'       => false,
-						'custom'           => false,
-						'customDuotone'    => false,
-						'customGradient'   => false,
-						'defaultGradients' => false,
-						'defaultPalette'   => false,
-						'text'             => false,
-					),
-					'typography' => array(
-						'customFontSize' => false,
-						'dropCap'        => false,
-						'fontStyle'      => false,
-						'fontWeight'     => false,
-						'letterSpacing'  => false,
-						'lineHeight'     => false,
-						'textDecoration' => false,
-						'textTransform'  => false,
-						'fontSizes'      => array(),
-						'fontFamilies'   => array(),
-					),
-				),
-			)
-		);
-
-		return $theme;
 	}
 
 	/**
