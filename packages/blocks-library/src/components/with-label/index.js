@@ -13,7 +13,7 @@ function WithLabel( props ) {
 	return (
 		<label>
 			<RawHTML>{ props.label }</RawHTML>
-			{ props.children }
+			{ props?.children ?? null }
 		</label>
 	);
 }

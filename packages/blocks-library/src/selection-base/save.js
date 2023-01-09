@@ -23,9 +23,8 @@ export default function save( props ) {
 					props.attributes.isRequired
 				) }
 				showLabel={ props.attributes.showLabel }
-			>
-				<RawHTML>{ shortcode }</RawHTML>
-			</WithLabel>
+			/>
+			<RawHTML>{ shortcode }</RawHTML>
 		</div>
 	);
 }

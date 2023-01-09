@@ -1,5 +1,8 @@
 .wp-block-cf7-blocks-selection-base {
 
+	display: flex;
+	flex-direction: column;
+
 	select {
 		width: 100%;
 	}
