@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Block Editor Kit for Contact Form 7 - CF7 Blocks
+ * Plugin Name: CF7 Blocks
  * Plugin URI: https://cf7blocks.com
  * Description: Effortlessly Create Stunning Contact Forms with CF7 Blocks and Contact Form 7
  * Version: 1.0.0
