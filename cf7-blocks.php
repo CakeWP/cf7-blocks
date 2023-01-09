@@ -3,7 +3,7 @@
  * Plugin Name: CF7 Blocks
  * Plugin URI: https://cf7blocks.com
  * Description: Effortlessly Create Stunning Contact Forms with CF7 Blocks and Contact Form 7
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: munirkamal
  * Author URI: https://www.munirkamal.com/
  * Text Domain: cf7-blocks

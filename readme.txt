@@ -5,7 +5,7 @@ Donate link: https://www.buymeacoffee.com/munirkamal
 Tags: cf7, contact form, contact form 7, block editor, blocks, forms
 Requires at least: 5.9
 Tested up to: 6.1
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 Requires PHP: 7.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -52,6 +52,12 @@ CF7 Blocks is designed to work exclusively with the WordPress block editor. It i
 5. Screenshot 5
 
 == Changelog ==
+
+= 1.0.1 =
+
+Fix: Added support for legacy theme (that fixes the loading issue).
+Fix: Field label formatting issue.
+Fix: Minor bugs
 
 = 1.0.0 =
 
